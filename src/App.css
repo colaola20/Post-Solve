@@ -1,0 +1,66 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  max-width: 1200px;
+  top: 0px;
+  right: 20px;
+  left: 20px; /* Add left margin for full width with spacing */
+  z-index: 1000;
+  background: linear-gradient(135deg, #dc2626, #991b1b); /* Red gradient background */
+  padding: 12px 24px;
+  border-radius: 8px;
+  gap: 18px;
+  align-items: center; /* Fixed from 'end' to proper value */
+  box-shadow: 0 4px 6px rgba(220, 38, 38, 0.3); /* Red shadow */
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none; /* Remove bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  gap: 18px; /* Space between list items */
+  align-items: center; /* Align logo and links vertically */
+  width: 100%; /* Take full width */
+}
+
+/* Logo styling */
+nav .logo {
+  font-size: 1.8rem; /* Make it bigger */
+  font-weight: 700; /* Bold */
+  color: white;
+  margin-right: 30px; /* Space between logo and navigation links */
+  letter-spacing: 0.5px; /* Slight letter spacing for style */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Container for navigation links */
+nav .nav-links {
+  display: flex;
+  gap: 18px;
+  margin-left: auto; /* Push navigation links to the right */
+}
+
+nav a {
+  text-decoration: none; /* Remove underlines from links */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px); /* Subtle lift effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav a:active {
+  background-color: rgba(139, 69, 19, 0.3); /* Darker red when clicked */
+  transform: translateY(0);
+}
