@@ -2,10 +2,11 @@ nav {
   display: flex;
   flex-direction: row;
   position: fixed;
+  width: calc(100% - 40px); /* Responsive width */
   max-width: 1200px;
   top: 0px;
-  right: 20px;
-  left: 20px; /* Add left margin for full width with spacing */
+  left: 50%;
+  transform: translateX(-50%); /* Center the nav */
   z-index: 1000;
   background: linear-gradient(135deg, #dc2626, #991b1b); /* Red gradient background */
   padding: 12px 24px;
@@ -63,4 +64,98 @@ nav a:hover {
 nav a:active {
   background-color: rgba(139, 69, 19, 0.3); /* Darker red when clicked */
   transform: translateY(0);
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    padding: 12px 16px;
+    width: calc(100% - 20px);
+    top: 10px;
+  }
+  
+  nav ul {
+    position: relative;
+  }
+  
+  nav .logo {
+    font-size: 1.4rem;
+    margin-right: 20px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+  
+  nav .nav-links {
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(220, 38, 38, 0.3);
+    flex-direction: column;
+    gap: 12px;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    margin-left: 0;
+  }
+  
+  nav .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  nav .nav-links li {
+    width: 100%;
+  }
+  
+  nav .nav-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 12px;
+    width: calc(100% - 10px);
+    top: 5px;
+  }
+  
+  nav .logo {
+    font-size: 1.2rem;
+    margin-right: 15px;
+  }
+  
+  nav .nav-links {
+    left: -12px;
+    right: -12px;
+  }
 }
