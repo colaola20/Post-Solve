@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Layout from './routes/Layout'
 import CreatePost from './pages/CreatePost.jsx'
 import PostDetail from './pages/PostDetail.jsx'
+import EditPost from './pages/EditPost.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')).render(
           <Route index element={<App />} />
           <Route path="/create" element={<CreatePost />} />
           <Route path="/post/:id" element={<PostDetail/>} />
+          <Route path="edit/:id" element={<EditPost />} />
         </Route>
       </Routes>
     </BrowserRouter>
