@@ -1,0 +1,158 @@
+/* ReadPosts Component Styles */
+.ReadPosts {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Sort Controls */
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+}
+
+.sort-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.sort-dropdown {
+  background: linear-gradient(135deg, #374151, #1f2937);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.sort-dropdown:hover {
+  border-color: var(--primary-red, #dc2626);
+  background: linear-gradient(135deg, #4b5563, #374151);
+}
+
+.sort-dropdown:focus {
+  outline: none;
+  border-color: var(--primary-red, #dc2626);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.post-count {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Search Section */
+.search-section {
+  margin-bottom: 32px;
+  padding: 20px;
+  background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-section input {
+  width: 100%;
+  background: linear-gradient(135deg, #374151, #1f2937);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.search-section input:focus {
+  outline: none;
+  border-color: var(--primary-red, #dc2626);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.search-section input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Posts List */
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Empty State */
+.ReadPosts h2 {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  margin: 60px 0;
+  background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ReadPosts {
+    padding: 16px;
+  }
+  
+  .sort-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .sort-dropdown {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .post-count {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .search-section {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ReadPosts {
+    padding: 12px;
+  }
+  
+  .sort-controls {
+    padding: 16px;
+  }
+  
+  .search-section {
+    padding: 12px;
+  }
+  
+  .search-section input {
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+}
