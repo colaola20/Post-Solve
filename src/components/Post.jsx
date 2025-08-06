@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import {supabase} from '../client'
 import './Post.css'
 
@@ -153,6 +153,7 @@ const Post = (props) => {
                                 Only the author can mark as solved
                             </span>
                         )}
+                        <Link to={'edit/' + id}><button className="edit">Edit</button></Link>
                     </div>
                 </div>
             )}
