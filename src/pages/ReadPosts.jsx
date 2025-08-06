@@ -1,5 +1,6 @@
 import { supabase } from '../client'
 import { useState, useEffect } from 'react'
+import Post from '../components/Post'
 
 const ReadPosts = (props) => {
     const [posts, setPosts] = useState([])
@@ -31,7 +32,9 @@ const ReadPosts = (props) => {
                         description={post.description}
                         upvotes={post.upvotes}
                         image_url={post.image_url}
-                        is_solved={posts.is_solved}
+                        is_solved={post.is_solved}
+                        created_at={post.created_at}
+                        variant="summary"
                     />
                 ) : <h2>{'No Posts Yet 😞'}</h2>
             }
