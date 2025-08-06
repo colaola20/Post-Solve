@@ -34,7 +34,7 @@ The following **required** functionality is completed:
     - image
     - comments
   - [ ] Users can leave comments underneath a post on the post page
-  - [x]Each post includes an upvote button on the post page. 
+  - [x] Each post includes an upvote button on the post page. 
     - Each click increases the post's upvotes count by one
     - Users can upvote any post any number of times
 
