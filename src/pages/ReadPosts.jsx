@@ -6,6 +6,8 @@ import './ReadPosts.css'
 const ReadPosts = (props) => {
     const [posts, setPosts] = useState([])
     const [sortBy, setSortBy] = useState('newest')
+    const [searchInput, setSearchInput] = useState("");
+    const [filteredResults, setFilteredResults] = useState([]);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -54,10 +56,29 @@ const ReadPosts = (props) => {
 
     const sortedPosts = sortPosts(posts, sortBy)
 
+    const searchItems = searchValue => {
+        setSearchInput(searchValue);
+
+        if (searchValue !== "") {
+            const filteredPosts = posts.filter((post) =>
+                post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+                post.description.toLowerCase().includes(searchValue.toLowerCase())
+            );
+            setFilteredResults(filteredPosts);
+        } else {
+            setFilteredResults([]);
+        }
+    }
+
+    const displayedPosts = (() => {
+        let postsToFilter = filteredResults.length > 0 ? filteredResults : posts;
+        return sortPosts(postsToFilter, sortBy);
+    })();
+
     return (
         <div className="ReadPosts">
             <div className="sort-controls">
-                <label htlmFor="sort-select" className="sort-label">
+                <label htmlFor="sort-select" className="sort-label">
                     Sort by:
                 </label>
                 <select
@@ -74,13 +95,21 @@ const ReadPosts = (props) => {
                     <option value="unsolved">❓ Unsolved First</option>
                 </select>
                 <span className="post-count">
-                    {posts.length} posts {posts.length !== 1 ? 's' : ''} found
+                    {displayedPosts.length} post{displayedPosts.length !== 1 ? 's' : ''} found
                 </span>
+            </div>
+            <div className="search-section">
+                <input
+                    type="search"
+                    placeholder="Search posts by title or description..."
+                    value={searchInput}
+                    onChange={(inputString) => searchItems(inputString.target.value)}
+                />
             </div>
             <div className="posts-list">
                 {
-                    sortedPosts && sortedPosts.length > 0 ?
-                    sortedPosts.map((post,index) => 
+                    displayedPosts && displayedPosts.length > 0 ?
+                    displayedPosts.map((post, index) => 
                         <Post 
                             key={post.id}
                             id={post.id} 
