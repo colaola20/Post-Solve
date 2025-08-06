@@ -42,7 +42,6 @@ const Post = (props) => {
             <div className="post-header">
                 <h1 className="title">{props.title}</h1>
                 <div className="post-meta">
-                    <h3 className="author">by {props.author}</h3>
                     <span className="creation-time">
                         {new Date(props.created_at).toLocaleDateString()}
                     </span>
@@ -54,9 +53,6 @@ const Post = (props) => {
                 <div className="post-summary">
                     <div className="post-stats">
                         <span className="upvote-count">👍 {upvotes}</span>
-                        <span className={`status ${isSolved ? 'solved' : 'unsolved'}`}>
-                            {isSolved ? "✅ Solved" : "❓ Unsolved"}
-                        </span>
                     </div>
                     
                     
@@ -71,7 +67,14 @@ const Post = (props) => {
             ) : (
                 /* Detailed View */
                 <div className="post-detail">
+                    <div className="post-meta">
+                        <h3 className="author">by {props.author}</h3>
+                        <span className="creation-time">
+                            {new Date(props.created_at).toLocaleDateString()}
+                        </span>
+                    </div>
                     <div className="post-status">
+                        <span className="upvote-count">👍 {upvotes}</span>
                         <h3 className={`is_solved ${isSolved ? 'solved' : 'unsolved'}`}>
                             {isSolved ? "✅ Problem Solved" : "❓ Problem Unsolved"}
                         </h3>
