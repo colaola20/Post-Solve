@@ -32,7 +32,7 @@ const CreatePost = () => {
                 <h1 className="create-post-title">Create New Post</h1>
                 <p className="create-post-subtitle">Share your problem and get help from the community</p>
             </div>
-            <form className="create-post-form">
+            <form className="create-post-form" onSubmit={createPost}>
                 <div className="form-group">
                     <label className="form-label">
                         Title <span className="required">*</span>
@@ -105,8 +105,7 @@ const CreatePost = () => {
                     </button>
                     <button 
                         className="btn btn-primary" 
-                        type="submit" 
-                        onClick={createPost}
+                        type="submit"
                         disabled={!post.title || !post.author || !post.description}
                     >
                         Create Post
