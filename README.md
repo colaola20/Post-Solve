@@ -4,7 +4,7 @@ Submitted by: Olha Sorych
 
 Post & Solve is a community-driven platform where developers share coding problems and collaborate on solutions. Users can post challenges, provide detailed descriptions, and engage in thoughtful discussions through comments. Each post can be upvoted, sorted, and searched, making it easy to discover popular or recent problems. Whether you're stuck on a bug or want to sharpen your skills, Post & Solve is the place to learn, teach, and grow together.
 
-Time spent: **X** hours spent in total
+Time spent: 9 hours spent in total
 
 ## Required Features
 
